@@ -1,0 +1,3 @@
+@echo off
+echo 正在启动 ZKTeco 生物识别系统中间件服务...
+dotnet run --urls=http://0.0.0.0:9000
