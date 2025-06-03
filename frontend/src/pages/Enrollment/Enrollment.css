@@ -1,0 +1,143 @@
+.enrollment-container {
+  padding: 20px;
+}
+
+.enrollment-header {
+  margin-bottom: 24px;
+}
+
+.enrollment-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+
+.enrollment-description {
+  color: #64748b;
+  font-size: 0.95rem;
+}
+
+.enrollment-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.enrollment-form-container {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+}
+
+.enrollment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #334155;
+}
+
+.form-group input,
+.form-group select {
+  padding: 10px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  color: #1e293b;
+  transition: border-color 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+.enroll-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  background-color: #3b82f6;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 8px;
+}
+
+.enroll-button:hover {
+  background-color: #2563eb;
+}
+
+.enroll-button:disabled {
+  background-color: #94a3b8;
+  cursor: not-allowed;
+}
+
+.enrollment-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.camera-preview {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.camera-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  color: #94a3b8;
+  text-align: center;
+}
+
+.enrollment-status {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.enrollment-status.success {
+  background-color: #ecfdf5;
+  color: #047857;
+}
+
+.enrollment-status.error {
+  background-color: #fef2f2;
+  color: #b91c1c;
+}
+
+@media (max-width: 768px) {
+  .enrollment-content {
+    grid-template-columns: 1fr;
+  }
+}
