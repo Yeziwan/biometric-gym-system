@@ -14,6 +14,9 @@ from app.models import models
 from app.api.member import router as member_router
 from app.api.device import router as device_router
 from app.api.fingerprint import router as fingerprint_router
+from app.api.branch import router as branch_router
+from app.api.access import router as access_router
+from app.api.attendance import router as attendance_router
 from app.websocket.connection_manager import ConnectionManager
 
 # 创建数据库表
@@ -37,6 +40,9 @@ manager = ConnectionManager()
 app.include_router(member_router.router, prefix="/api/members", tags=["members"])
 app.include_router(device_router.router, prefix="/api/devices", tags=["devices"])
 app.include_router(fingerprint_router.router, prefix="/api/fingerprints", tags=["fingerprints"])
+app.include_router(branch_router.router, prefix="/api/branches", tags=["branches"])
+app.include_router(access_router.router, prefix="/api/access", tags=["access"])
+app.include_router(attendance_router.router, prefix="/api/attendance", tags=["attendance"])
 
 @app.get("/")
 async def root():
@@ -66,6 +72,11 @@ async def websocket_endpoint(websocket: WebSocket):
                 # 处理指纹识别请求
                 await manager.broadcast({"type": "recognition_status", "message": "开始识别指纹..."})
                 # 这里应该调用中间件服务
+            
+            elif message.get("type") == "access_control_request":
+                # 处理访问控制请求
+                await manager.broadcast({"type": "access_control_result", "message": "处理访问控制..."})
+                # 这里应该调用访问控制逻辑
     
     except WebSocketDisconnect:
         manager.disconnect(websocket)

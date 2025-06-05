@@ -9,7 +9,11 @@ import {
   Shield, 
   Search,
   User,
-  LogOut
+  LogOut,
+  Building,
+  Clock,
+  Calendar,
+  UserPlus
 } from 'lucide-react';
 
 export const Layout = ({ children }) => {
@@ -27,7 +31,7 @@ export const Layout = ({ children }) => {
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <Fingerprint className="h-8 w-8 text-blue-600" />
-              <h1 className="ml-2 text-xl font-bold text-gray-900">ZKTeco K40生物识别系统</h1>
+              <h1 className="ml-2 text-xl font-bold text-gray-900">ZKTeco K40 Biometric System</h1>
             </div>
             <div className="flex items-center">
               <button className="p-2 rounded-full text-gray-500 hover:bg-gray-100">
@@ -58,19 +62,8 @@ export const Layout = ({ children }) => {
                       : 'text-gray-700 hover:bg-gray-50'
                   }`}
                 >
-                  <Monitor className="h-5 w-5 mr-3" />
-                  仪表板
-                </Link>
-                <Link
-                  to="/enrollment"
-                  className={`w-full flex items-center px-4 py-3 text-sm font-medium ${
-                    isActive('/enrollment')
-                      ? 'bg-blue-50 text-blue-700 border-l-4 border-blue-500'
-                      : 'text-gray-700 hover:bg-gray-50'
-                  }`}
-                >
-                  <Fingerprint className="h-5 w-5 mr-3" />
-                  指纹录入
+                  <Activity className="h-5 w-5 mr-3" />
+                  Dashboard
                 </Link>
                 <Link
                   to="/recognition"
@@ -81,7 +74,7 @@ export const Layout = ({ children }) => {
                   }`}
                 >
                   <Search className="h-5 w-5 mr-3" />
-                  识别记录
+                  Recognition Records
                 </Link>
                 <Link
                   to="/members"
@@ -92,7 +85,7 @@ export const Layout = ({ children }) => {
                   }`}
                 >
                   <Users className="h-5 w-5 mr-3" />
-                  会员管理
+                  Member Management
                 </Link>
                 <Link
                   to="/devices"
@@ -103,7 +96,40 @@ export const Layout = ({ children }) => {
                   }`}
                 >
                   <Monitor className="h-5 w-5 mr-3" />
-                  设备管理
+                  Device Management
+                </Link>
+                <Link
+                  to="/branches"
+                  className={`w-full flex items-center px-4 py-3 text-sm font-medium ${
+                    isActive('/branches')
+                      ? 'bg-blue-50 text-blue-700 border-l-4 border-blue-500'
+                      : 'text-gray-700 hover:bg-gray-50'
+                  }`}
+                >
+                  <Building className="h-5 w-5 mr-3" />
+                  Branch Management
+                </Link>
+                <Link
+                  to="/access-control"
+                  className={`w-full flex items-center px-4 py-3 text-sm font-medium ${
+                    isActive('/access-control')
+                      ? 'bg-blue-50 text-blue-700 border-l-4 border-blue-500'
+                      : 'text-gray-700 hover:bg-gray-50'
+                  }`}
+                >
+                  <Shield className="h-5 w-5 mr-3" />
+                  Access Control
+                </Link>
+                <Link
+                  to="/attendance"
+                  className={`w-full flex items-center px-4 py-3 text-sm font-medium ${
+                    isActive('/attendance')
+                      ? 'bg-blue-50 text-blue-700 border-l-4 border-blue-500'
+                      : 'text-gray-700 hover:bg-gray-50'
+                  }`}
+                >
+                  <Clock className="h-5 w-5 mr-3" />
+                  Attendance Management
                 </Link>
                 <Link
                   to="/settings"
@@ -114,7 +140,7 @@ export const Layout = ({ children }) => {
                   }`}
                 >
                   <Settings className="h-5 w-5 mr-3" />
-                  系统设置
+                  System Settings
                 </Link>
               </nav>
             </div>
