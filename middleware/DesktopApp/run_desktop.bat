@@ -11,17 +11,31 @@ if errorlevel 1 (
     exit /b 1
 )
 
+REM Navigate to the correct directory
+cd /d "%~dp0"
+
 REM Build and run the desktop application
 echo Building desktop application...
 dotnet build BiometricGymDesktop.csproj
 
 if errorlevel 1 (
     echo ERROR: Failed to build the application
+    echo.
+    echo Make sure you have:
+    echo 1. .NET 6.0 SDK installed
+    echo 2. All required dependencies
+    echo 3. Proper project configuration
     pause
     exit /b 1
 )
 
 echo Starting desktop application...
 dotnet run --project BiometricGymDesktop.csproj
+
+if errorlevel 1 (
+    echo ERROR: Failed to start the application
+    pause
+    exit /b 1
+)
 
 pause 

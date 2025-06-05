@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Include="..\Forms\*.cs" />
+    <PackageReference Include="Microsoft.WindowsDesktop.App" Version="6.0.0" />
   </ItemGroup>
 
 </Project> 
